@@ -6,14 +6,14 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import { TodosContext } from './contexts/todos.context';
 
 function EditTodoForm({ id, task, toggleEditForm }) {
-  const { editTodo } = useContext(TodosContext);
+  const { dispatch } = useContext(TodosContext);
   const [value, handleChange, reset] = useInputState(task);
   console.log('edit form render');
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
-        editTodo(id, value);
+        dispatch({ type: 'EDIT', id: id, newTask: value });
         reset();
         toggleEditForm();
       }}
