@@ -7,7 +7,6 @@ import { DispatchContext } from './contexts/todos.context';
 function TodoForm() {
   const [value, handleChange, reset] = useInputState('');
   const dispatch = useContext(DispatchContext);
-  console.log('todo form render');
   return (
     <Paper style={{ margin: '1rem 0', padding: '0 1rem' }}>
       <form

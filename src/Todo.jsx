@@ -13,7 +13,6 @@ import { DispatchContext } from './contexts/todos.context';
 function Todo({ id, task, completed }) {
   const dispatch = useContext(DispatchContext);
   const [isEditing, toggle] = useToggleState(false);
-  console.log('todo rerender: ', task);
 
   return (
     <ListItem style={{ height: '64px' }}>
