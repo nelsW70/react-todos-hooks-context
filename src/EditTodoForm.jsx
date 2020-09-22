@@ -3,12 +3,11 @@ import useInputState from './hooks/useInputState';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import CancelIcon from '@material-ui/icons/Cancel';
-import { TodosContext } from './contexts/todos.context';
+import { DispatchContext } from './contexts/todos.context';
 
 function EditTodoForm({ id, task, toggleEditForm }) {
-  const { dispatch } = useContext(TodosContext);
+  const dispatch = useContext(DispatchContext);
   const [value, handleChange, reset] = useInputState(task);
-  console.log('edit form render');
   return (
     <form
       onSubmit={e => {
