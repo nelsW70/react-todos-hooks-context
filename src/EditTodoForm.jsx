@@ -8,6 +8,7 @@ import { TodosContext } from './contexts/todos.context';
 function EditTodoForm({ id, task, toggleEditForm }) {
   const { editTodo } = useContext(TodosContext);
   const [value, handleChange, reset] = useInputState(task);
+  console.log('edit form render');
   return (
     <form
       onSubmit={e => {
